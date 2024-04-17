@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>title</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <!-- page content -->
 # Overwrite all free space with random data
 $drive = Get-WmiObject Win32_Volume | Where-Object {$_.DriveType -eq 3 -and $_.DriveLetter -ne $null}
 
@@ -15,3 +25,5 @@ foreach ($d in $drive) {
     [System.IO.File]::WriteAllBytes("$driveLetter\random_data.tmp", $randomData)
     [System.IO.File]::Delete("$driveLetter\random_data.tmp")
 }
+  </body>
+</html>
